@@ -89,6 +89,35 @@
             height: 100%;
         }
 
+        /* NEW: YouTube Video Button Styles */
+        .youtube-button {
+            display: inline-block;
+            background: linear-gradient(to right, #ff0000, #cc0000);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .youtube-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+            background: linear-gradient(to right, #cc0000, #990000);
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
         /* Footer Styles - Only one footer now */
         footer {
             text-align: center;
@@ -225,6 +254,15 @@
             <h2>Our Videos</h2>
             <div class="video-container">
                 <iframe id="video-iframe" src="https://www.youtube.com/embed/k7-8fLVUjfg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- NEW: YouTube Video Button Section -->
+            <div class="button-container">
+                <p style="color: #333; font-weight: bold; margin-bottom: 15px; font-size: 1.1em;">🎬 Click here to view my video 🎬</p>
+                <a href="https://youtu.be/A7FPkVuYb_c?si=GssEGl7vPxS5-roH" target="_blank" class="youtube-button">
+                    📹 Watch My Video
+                </a>
+                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Click the button above to watch my personal video!</p>
             </div>
         </section>
     </main>
