@@ -27,6 +27,8 @@
             padding: 50px 20px;
             background: linear-gradient(to right, red, blue, white);
             color: #fff;
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
@@ -39,6 +41,88 @@
         header p {
             font-size: 1.2em;
             color: white;
+        }
+
+        /* Header emoji animations */
+        .header-emoji-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .header-emoji {
+            font-size: 2em;
+            position: absolute;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            opacity: 0;
+        }
+
+        .scissors-emoji {
+            top: 10%;
+            left: -10%;
+            animation-name: flyInCloser;
+            animation-delay: 0s;
+        }
+
+        .razor-emoji {
+            top: 25%;
+            left: -10%;
+            animation-name: flyInCloser;
+            animation-delay: 1.5s;
+        }
+
+        .spray-emoji {
+            top: 40%;
+            left: -10%;
+            animation-name: flyInCloser;
+            animation-delay: 3s;
+        }
+
+        .comb-emoji {
+            top: 55%;
+            left: -10%;
+            animation-name: flyInCloser;
+            animation-delay: 4.5s;
+        }
+
+        .mirror-emoji {
+            top: 70%;
+            left: -10%;
+            animation-name: flyInCloser;
+            animation-delay: 6s;
+        }
+
+        .dancing-guy-emoji {
+            top: 85%;
+            left: -10%;
+            animation-name: flyInCloser;
+            animation-delay: 7.5s;
+        }
+
+        @keyframes flyInCloser {
+            0% {
+                transform: translateX(0) translateZ(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(50vw) translateZ(200px) scale(2);
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(120vw) translateZ(0) scale(1);
+                opacity: 0;
+            }
         }
 
         /* Main Content Section Styles */
@@ -116,6 +200,21 @@
         .button-container {
             text-align: center;
             margin: 30px 0;
+        }
+
+        /* Dancing guy animation */
+        .dancing-guy {
+            font-size: 2em;
+            display: inline-block;
+            animation: dance 2s infinite ease-in-out;
+            margin: 0 10px;
+        }
+
+        @keyframes dance {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(5deg); }
+            50% { transform: translateY(-5px) rotate(-5deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
         }
 
         /* Footer Styles - Only one footer now */
@@ -245,6 +344,14 @@
 <body>
 
     <header>
+        <div class="header-emoji-container">
+            <span class="header-emoji scissors-emoji">✂️</span>
+            <span class="header-emoji razor-emoji">🪒</span>
+            <span class="header-emoji spray-emoji">💨</span>
+            <span class="header-emoji comb-emoji">🔸</span>
+            <span class="header-emoji mirror-emoji">🔍</span>
+            <span class="header-emoji dancing-guy-emoji">🕺</span>
+        </div>
         <h1>Ek's The Barber</h1>
         <p>Best Barber in Town</p>
     </header>
@@ -258,7 +365,9 @@
 
             <!-- NEW: YouTube Video Button Section -->
             <div class="button-container">
-                <p style="color: #333; font-weight: bold; margin-bottom: 15px; font-size: 1.1em;">🎬 Click here to view my video 🎬</p>
+                <p style="color: #333; font-weight: bold; margin-bottom: 15px; font-size: 1.1em;">
+                    <span class="dancing-guy">🕺</span> Click here to view my video <span class="dancing-guy">🕺</span>
+                </p>
                 <a href="https://youtu.be/A7FPkVuYb_c?si=GssEGl7vPxS5-roH" target="_blank" class="youtube-button">
                     📹 Watch My Video
                 </a>
